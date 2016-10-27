@@ -13,4 +13,25 @@
 		
 		$(".right").html("<textarea>"+markcontents+"</textarea>");
  	})
+	
 })
+
+function change(contents)
+{
+	var regular = [{
+			pattern: 'h2',
+			reg: /#{2}([^#]*)*/,
+			replacement: '<h2>$1</h2>';
+		},{
+			pattern: 'h1',
+			reg: /#([^#]*)*/,
+			replacement: '<h1>$1</h1>';
+		}
+	
+	]
+}
+
+function preg_rep(content,regular)
+{
+	
+}
