@@ -22,7 +22,7 @@ function change(contents,line)
 	
 	var regular = [{
 			pattern: 'line',
-			reg: /^(\s*[\w\s]+)/,
+			reg: /^(\s*[^#^-]+)/,
 			replacement: '<p>$1</p>'
 		},{
 			pattern: 'h6',
