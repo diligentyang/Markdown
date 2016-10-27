@@ -61,9 +61,23 @@ function change(contents,line)
 			reg: /\S*\*{1}(\S*)\*{1}\S*/g,
 			replacement: '<em>$1</em>'
 		},{
+			pattern: 'codeblock',
+			reg: /\`{3}(\S*?)\`{3}/g,
+			replacement: '<pre><codeblock>$1</pre></codeblock>'
+		},{
 			pattern: 'code',
 			reg: /\`{1}(\S*?)\`{1}/g,
 			replacement: '<code>$1</code>'
+		},{
+			//[baidu](www.baidu.com "百度")
+			pattern: 'a',
+			reg: /\[(\S*)\]\((\S+) \"(\S*)\"\)/,
+			replacement: '<a href="$2" title="$3">$1</a>' 
+		},{
+			//[baidu](www.baidu.com)
+			pattern: 'a',
+			reg: /\[(\S*)\]\((\S+) *\)/,
+			replacement: '<a href="$2">$1</a>'
 		}];
 	for (var i=0; i<line; i++) {
 		for (var j=0; j<regular.length; j++) {
