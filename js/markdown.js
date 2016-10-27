@@ -11,34 +11,36 @@
 		var contents = markcontents.split("<br>");
 		line = contents.length-1==0?1:contents.length-1;
 		
-		change(contents,line);
-		
-		$(".right").html("<textarea>"+markcontents+"</textarea>");
+		$(".right").html(change(contents,line));
  	})
 	
 })
 
 function change(contents,line)
 {
-	var htmlcontents="";
+	
 	var regular = [{
 			pattern: 'h2',
-			reg: /#{2}([^#]*)*/,
+			reg: /^#{2}([^#]*)#*.*/g,
 			replacement: '<h2>$1</h2>'
 		},{
 			pattern: 'h1',
-			reg: /#([^#]*)*/,
+			reg: /^#([^#]*)#*.*/g,
 			replacement: '<h1>$1</h1>'
 		}];
 	for (var i=0; i<line; i++) {
 		for (var j=0; j<regular.length; j++) {
-			preg_rep(contents[i], regular[j]);
+			contents[i]=preg_rep(contents[i], regular[j]);
+			
 		}
 	}
-	return htmlcontents;
+	return contents.join("");
 }
 
 function preg_rep(content,regular)
 {
-	
+	//console.log(content);
+	content=content.replace(regular.reg, regular.replacement);
+	//console.log(content);
+	return content;
 }
