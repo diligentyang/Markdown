@@ -52,6 +52,10 @@ function change(contents,line)
 			pattern: 'hr',
 			reg: /^(\s*\-{3,}).*/,
 			replacement: '<hr>'
+		},{
+			pattern: 'strong',
+			reg: /\S*\*{2}(\S*)\*{2}\S*/g,
+			replacement: '<strong>$1</strong>'
 		}];
 	for (var i=0; i<line; i++) {
 		for (var j=0; j<regular.length; j++) {
