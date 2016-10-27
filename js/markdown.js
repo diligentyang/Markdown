@@ -12,7 +12,7 @@
 		line = contents.length-1==0?1:contents.length-1;
 		
 		//$(".right").html("<textarea>"+change(contents,line)+"</textarea>");
-		$(".right").html("<textarea>"+change(contents,line)+"</textarea>");
+		$(".right").html(change(contents,line));
  	})
 	
 })
@@ -79,10 +79,26 @@ function change(contents,line)
 			reg: /\[(\S*)\]\((\S+) *\)/,
 			replacement: '<a href="$2">$1</a>'
 		}];
+		
+	var test = new RegExp(".*`{3}(.*)","g");
+	var flag=0;
 	for (var i=0; i<line; i++) {
-		for (var j=0; j<regular.length; j++) {
-			contents[i]=preg_rep(contents[i], regular[j]);
-			
+		if (test.exec(contents[i])) {
+			if(flag==0){
+				contents[i]=contents[i].replace(/^`{3}(.*)/g, '<pre>$1');
+				flag++;
+			}else if(flag==1){
+				contents[i]=contents[i].replace(/(.*)`{3}$/g, '$1</pre>');
+				flag--;
+			}else{
+				alert("发生未知错误!");
+			}
+		} 
+		
+		if(flag==0){
+			for (var j=0; j<regular.length; j++) {
+				contents[i]=preg_rep(contents[i], regular[j]);
+			}
 		}
 	}
 	return contents.join("");
