@@ -12,7 +12,7 @@
 		line = contents.length-1==0?1:contents.length-1;
 		
 		//$(".right").html("<textarea>"+change(contents,line)+"</textarea>");
-		$(".right").html(change(contents,line));
+		$(".right").html("<textarea>"+change(contents,line)+"</textarea>");
  	})
 	
 })
@@ -22,7 +22,7 @@ function change(contents,line)
 	
 	var regular = [{
 			pattern: 'line',
-			reg: /^(\s*\w+)/,
+			reg: /^(\s*[\w\s]+)/,
 			replacement: '<p>$1</p>'
 		},{
 			pattern: 'h6',
@@ -66,7 +66,7 @@ function change(contents,line)
 			replacement: '<pre><codeblock>$1</pre></codeblock>'
 		},{
 			pattern: 'code',
-			reg: /\`{1}(\S*?)\`{1}/g,
+			reg: /\`{1}(.*?)\`{1}/g,
 			replacement: '<code>$1</code>'
 		},{
 			//[baidu](www.baidu.com "百度")
