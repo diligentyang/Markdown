@@ -11,7 +11,7 @@
 		var contents = markcontents.split("<br>");
 		line = contents.length-1==0?1:contents.length-1;
 		
-		$(".right").html(change(contents,line));
+		$(".right").html("<textarea>"+change(contents,line)+"</	textarea>");
  	})
 	
 })
@@ -20,6 +20,10 @@ function change(contents,line)
 {
 	
 	var regular = [{
+			pattern: 'line',
+			reg: /^(\s*\w+)/,
+			replacement: '<p>$1</p>'
+		},{
 			pattern: 'h6',
 			reg: /^#{6}([^#]*)#*.*/g,
 			replacement: '<h6>$1</h6>'
