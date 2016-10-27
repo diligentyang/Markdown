@@ -20,6 +20,22 @@ function change(contents,line)
 {
 	
 	var regular = [{
+			pattern: 'h6',
+			reg: /^#{6}([^#]*)#*.*/g,
+			replacement: '<h6>$1</h6>'
+		},{
+			pattern: 'h5',
+			reg: /^#{5}([^#]*)#*.*/g,
+			replacement: '<h5>$1</h5>'
+		},{
+			pattern: 'h4',
+			reg: /^#{4}([^#]*)#*.*/g,
+			replacement: '<h4>$1</h4>'
+		},{
+			pattern: 'h3',
+			reg: /^#{3}([^#]*)#*.*/g,
+			replacement: '<h3>$1</h3>'
+		},{
 			pattern: 'h2',
 			reg: /^#{2}([^#]*)#*.*/g,
 			replacement: '<h2>$1</h2>'
