@@ -11,7 +11,8 @@
 		var contents = markcontents.split("<br>");
 		line = contents.length-1==0?1:contents.length-1;
 		
-		$(".right").html("<textarea>"+change(contents,line)+"</	textarea>");
+		//$(".right").html("<textarea>"+change(contents,line)+"</textarea>");
+		$(".right").html(change(contents,line));
  	})
 	
 })
