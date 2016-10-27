@@ -48,6 +48,10 @@ function change(contents,line)
 			pattern: 'h1',
 			reg: /^#([^#]*)#*.*/g,
 			replacement: '<h1>$1</h1>'
+		},{
+			pattern: 'hr',
+			reg: /^(\s*\-{3,}).*/,
+			replacement: '<hr>'
 		}];
 	for (var i=0; i<line; i++) {
 		for (var j=0; j<regular.length; j++) {
