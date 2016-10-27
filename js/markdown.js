@@ -6,10 +6,11 @@
 		//$(".right").html($(".left").html());
 		//htmlcontents = htmlcontents.replace(/#([^#]*)#+|#([^#]*)/g,"<h1>$2$1</h1>");
 		
-		var markcontents = $(".left").html();
+		var markcontents = $(".left").html();//获取左侧所有内容
 		
-		var contents = markcontents.split("<br>");
-		line = contents.length-1==0?1:contents.length-1;
+		var contents = markcontents.split("<br>");//按<br>分开放进数组中
+		
+		line = contents.length-1==0?1:contents.length-1;//计算行数
 		
 		//$(".right").html("<textarea>"+change(contents,line)+"</textarea>");
 		$(".right").html(change(contents,line));
@@ -80,6 +81,7 @@ function change(contents,line)
 			replacement: '<a href="$2">$1</a>'
 		}];
 		
+	//单独判断```
 	var test = new RegExp(".*`{3}(.*)","g");
 	var flag=0;
 	for (var i=0; i<line; i++) {
