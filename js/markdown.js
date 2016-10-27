@@ -99,6 +99,8 @@ function change(contents,line)
 			for (var j=0; j<regular.length; j++) {
 				contents[i]=preg_rep(contents[i], regular[j]);
 			}
+		}else{
+			contents[i]+="<br>";
 		}
 	}
 	return contents.join("");
