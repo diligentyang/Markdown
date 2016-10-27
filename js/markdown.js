@@ -62,7 +62,7 @@ function change(contents,line)
 			replacement: '<em>$1</em>'
 		},{
 			pattern: 'code',
-			reg: /\S*\`{1}(\S*)\`{1}\S*/g,
+			reg: /\`{1}(\S*?)\`{1}/g,
 			replacement: '<code>$1</code>'
 		}];
 	for (var i=0; i<line; i++) {
