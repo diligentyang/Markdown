@@ -56,6 +56,14 @@ function change(contents,line)
 			pattern: 'strong',
 			reg: /\S*\*{2}(\S*)\*{2}\S*/g,
 			replacement: '<strong>$1</strong>'
+		},{
+			pattern: 'em',
+			reg: /\S*\*{1}(\S*)\*{1}\S*/g,
+			replacement: '<em>$1</em>'
+		},{
+			pattern: 'code',
+			reg: /\S*\`{1}(\S*)\`{1}\S*/g,
+			replacement: '<code>$1</code>'
 		}];
 	for (var i=0; i<line; i++) {
 		for (var j=0; j<regular.length; j++) {
