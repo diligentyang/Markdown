@@ -1,3 +1,10 @@
 ﻿.main{background:#eee;width:1100px;margin:0 auto;}
 .left{position:relative;float:left;margin:0;background:black;color:white;width:540px;min-height:500px;word-break:break-all;word-wrap:break-word;}
 .right{position:relative;float:left;left:10px;min-height:500px;width:540px;background:#ccc;}
+
+h1 { border-bottom: 1px solid #eee; }
+h1, h2, h3, h4, h5 { padding: 0.4em 0; margin-bottom: 0.5em; }
+p { border-left: 0.4em #DDDDDD solid; padding: 0.1em 1em 0.5em; background: #FEFFFF; font-size: 0.9em; font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+hr { background: #E7E7E7; height: 0.2em; border: 0px; margin: 1em 0; }
+pre {color: #E21149; margin: 1em 0; padding-bottom: 1em; background: #F7F7F7; font-size: 0.9em; font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace; word-wrap: break-word; overflow-x: auto; }
+code { background: #F5F5F5; padding: 0 0.5em; border: #E0E0E0 1px solid; color: #E21149; font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace; }

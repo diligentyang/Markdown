@@ -90,6 +90,7 @@ function change(contents,line)
 			}else if(flag==1){
 				contents[i]=contents[i].replace(/(.*)`{3}$/g, '$1</pre>');
 				flag--;
+				continue;
 			}else{
 				alert("发生未知错误!");
 			}
