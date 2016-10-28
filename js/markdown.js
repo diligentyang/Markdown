@@ -81,8 +81,8 @@ function change(contents,line)
 			replacement: '<a href="$2">$1</a>'
 		},{
 			pattern: 'li',
-			reg: /\+ (\S*)/,
-			replacement: '<li>$1</li>'
+			reg: /\+ (\S*)\<\/p\>/,
+			replacement: '<li>$1</li></p>'
 		}];
 		
 	//单独判断```
