@@ -79,6 +79,10 @@ function change(contents,line)
 			pattern: 'a',
 			reg: /\[(\S*)\]\((\S+) *\)/,
 			replacement: '<a href="$2">$1</a>'
+		},{
+			pattern: 'li',
+			reg: /\+ (\S*)/,
+			replacement: '<li>$1</li>'
 		}];
 		
 	//单独判断```
